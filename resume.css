@@ -1,0 +1,235 @@
+/*GENERAL*/
+:root{
+  --clr-accent:#e0a716;
+}
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background-color: #585c68;
+  font-size: 14px;
+  line-height: 22px;
+  
+}
+.bold{
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.semi_bold{
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume{
+  width: 800px;
+  height:auto;
+  display: flex;
+  margin:30px auto;
+}
+
+/*COLORED LEFT COLUMN SETTINGS*/
+.resume_left{
+  width: 280px;
+  background-color: var(--clr-accent);
+  
+}
+.resume_profile{
+  width:100%;
+  height:280px;
+  position: relative;
+  
+}
+#portrait{
+  width: 100%;
+  height:auto;
+  box-shadow: 2px 2px 5px #aaaaaa;
+  filter:grayscale(70%);
+  position: relative;
+  transform: rotateZ(-15deg) scale(0.95);
+  
+}
+#paperclip{
+  position: absolute;
+  top:-5%;
+  left:10%;
+  width:28%;
+  transform: rotateZ(-75deg);
+  
+}
+.icon{
+  width:1.6vw;
+  height: auto;
+  margin:0 1.3vw;
+  
+}
+
+.resume_content{
+  margin-top: 40px;
+  padding:22px 22px;
+  position: relative;
+  z-index:1;
+}
+
+.mainChaper{ /*Skills, Work Experience, etc*/
+  margin-bottom: 15px;
+}
+
+.resume_left .bold{
+  color:rgb(255, 255, 255);
+}
+
+.jobDescription{
+  color:rgb(220, 223, 156);
+}
+
+.resume_item{
+  padding:15px;
+  border-bottom:2px solid #ffffff;
+}
+
+.resume_item:last-child{
+  border-bottom:0px;
+}
+
+.resume_left ul>li{
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
+  margin-left: -46px;;
+}
+.resume_left ul>li:last-child{
+  margin-bottom:0;
+}
+
+/*WHITE RIGHT COLUMN SETTINGS*/
+.resume_right{
+  width:520px;
+  background-color:#ffffff;
+  padding:25px;
+  text-align: justify;
+}
+
+.resume_right .bold{
+  color: var(--clr-accent);
+}
+.resume_right ul{
+  padding-left:40px;
+  overflow: hidden;
+}
+.resume_right ul li{
+  position: relative;
+}
+.resume_right ul>li .date{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.resume_right ul>li>.info{
+  margin-bottom:5px;
+}
+.resume_right ul>li:last-child .info{
+  margin-bottom:0
+}
+.resume_work ul>li:before{
+  content:'';
+  position:absolute;
+  top:5px;
+  left:-25px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  border:2px solid  var(--clr-accent);
+  background-color: white;
+
+}
+.resume_work ul>li:after{
+  content:'';
+  position:absolute;
+  top:14px;
+  left:-21px;
+  width:2px;
+  height:115px;
+
+  border:2px solid  var(--clr-accent);
+  border-top: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+}
+
+/*PRINT SETTINGS*/
+@page {
+  size: A4 portrait;
+  
+}
+@media print {
+  #paperclip{
+    display: none;
+  }
+  #portrait{
+    transform: rotateZ(-15deg) scale(0.85);
+    margin-left:10px
+  }
+  .mainChaper .bold{
+    color: var(--clr-accent);
+  }
+  .mainChaper{
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }
+  .resume_left{
+    padding-left: 15px;
+  }
+  #printerIcon{
+    visibility: hidden;
+  }
+}
+#printerIcon{
+  position: absolute;
+  top:5vh;
+  right:5vw;
+  width:5vw;
+  padding:0.5vw;
+}
+#printerIcon:hover{
+  border: 1px solid var(--clr-accent);
+  border-radius: 3px;
+}
+
+/*HIGHLIGHT SETTINGS for the 'THAT IS ME!' text */
+.circle-highlight{
+  position:relative;
+}
+.circle-highlight:before, .circle-highlight:after{
+  content:"";
+  left:-0.5em;
+  border-width:2px;
+  border-style:solid;
+  border-color: var(--clr-accent);
+  position:absolute;
+  opacity:0.7;
+  border-radius:50%;
+}
+.circle-highlight:before{
+  top:-0.2em;
+  border-right-color:transparent;
+  width:130%;
+  height:1.5em;
+  transform:rotate(2deg);
+  padding:0.1em 0.25em;
+}
+.circle-highlight:after{
+  top:0.1em;
+  padding:0.2em 0.25em;
+  border-left-color:transparent;
+  border-top-color:transparent;
+  width:120%;
+  height:1.2em;
+  transform:rotate(-1deg);
+}
